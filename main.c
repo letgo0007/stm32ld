@@ -53,9 +53,6 @@ static void writeh_progress(u32 wrote)
 
 int main(int argc, const char **argv)
 {
-    u8 minor, major;
-    u16 version;
-
     // Build parameter structure
     struct STM32PrgramParam
     {
@@ -74,7 +71,7 @@ int main(int argc, const char **argv)
     // Parse arguments to parameters
     stCliOption MainOpt[] =
     {
-    { OPT_COMMENT, 0, NULL, "Usage Example: ./stm32ld -p /dev/cu.usbmodem -f /path/to/file/flash.bin -g ", NULL },
+    { OPT_COMMENT, 0, NULL, "Usage Example: \n\t./stm32ld -p /dev/cu.usbmodem -f /path/to/file/flash.bin -g", NULL },
     { OPT_COMMENT, 0, NULL, "Essential Arguments: ", NULL },
     { OPT_STRING, 'p', "port", "UART port path, e.g. /dev/cu.usbmodem", (void*) &ProgParam.port },
     { OPT_STRING, 'f', "file", "Bin file path, e.g. /path/to/file/flash.bin", (void*) ProgParam.file },
@@ -146,6 +143,9 @@ int main(int argc, const char **argv)
     }
 
     //2. Get version
+    u8 minor, major;
+    u16 version;
+
     if (stm32_get_version(&major, &minor) != STM32_OK)
     {
         fprintf( stderr, "Unable to get bootloader version\n");

@@ -46,7 +46,7 @@ CLI_RET cli_help(stCliOption options[])
     {
         if (options[i].OptType == OPT_COMMENT)
         {
-            printf("%s:\n", options[i].HelpText);
+            printf("%s\n", options[i].HelpText);
         }
         else
         {
