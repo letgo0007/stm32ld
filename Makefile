@@ -3,7 +3,7 @@
 
 CC=gcc
 EXE=stm32ld
-OBJ=main.o serial_posix.o stm32ld.o
+OBJ=main.o serial_posix.o stm32ld.o cli.o
 CFLAGS= -Wall
 
 all: $(EXE)
