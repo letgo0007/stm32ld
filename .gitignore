@@ -1,5 +1,5 @@
 *.spec
 *.o
 *.d
+*.DS_Store
 stm32ld
-
