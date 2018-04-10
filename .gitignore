@@ -3,3 +3,5 @@
 *.d
 stm32ld
 
+*.xml
+.settings/language.settings.xml
